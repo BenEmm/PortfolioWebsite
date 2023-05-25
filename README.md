@@ -1,9 +1,9 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9885390&assignment_repo_type=AssignmentRepo)
-# CTEC3905 ASSIGNMENT
+# My Porfolio
 
-Welcome. This is my assignment repository.
+Hello, World!
 
-In this file, you can find a brief description of my project in markdown format.
+In this file, you can find a brief description of my portfolio website in markdown format.
 
 This project is a portfolio website designed for my CTEC3905 assignment. It was important to me to challenge myself throughout this assignment, engaging with both the lab materials and further learning through the use of [MDN](https://developer.mozilla.org/en-US/docs/Learn), [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview) & [Open Weather Map API](https://openweathermap.org/). Throughout this project, I have also utilised icons from [Font Awesome](https://fontawesome.com/) and followed their [guides on how to make icons with semantic meaning accessible](https://fontawesome.com/v5/docs/web/other-topics/accessibility). As well as the above, I have also utilised a guide from [Kevin Powell](https://youtu.be/wodWDIdV9BY) for my dark mode implementation, however I have expanded upon this by using CSS custom variables in my implementation, custom icons and animating the icons.
 
@@ -19,14 +19,3 @@ I have tried to incorporate as many interesting features as I could into this we
 - Your darkmode choice will be saved! This has been achieved through the use of local storage, so no cookies!
 - Fancy animations on the dark mode toggle, intro subheading and the location pin on the Google map.
 - The website is fully responsive and utilises a mobile first design, check it out on all your devices!
-
->A live version of the website can be viewed at [BenMcLeod.com](https://ben-mcleod.com/#home) where I have bought a domain, hosted the website and setup a dedicated email address for the site as well. This domain will be continuously updated with the latest version of my project code. This website will be used on my CV and given to recruiters as I apply for jobs alongside my studies (Once the assignment is complete). This is a challenge I set for myself since this assignment previously required us to host via GitHub pages, but that is no longer possible.
-
-## References:
-
-- [MDN](https://developer.mozilla.org/en-US/docs/Learn)
-- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
-- [Open Weather Map API](https://openweathermap.org/).
-- [Font Awesome](https://fontawesome.com/)
-- [Font Awesome icons with semantic meaning accessibility](https://fontawesome.com/v5/docs/web/other-topics/accessibility)
-- [Kevin Powell Dark Mode](https://youtu.be/wodWDIdV9BY)
