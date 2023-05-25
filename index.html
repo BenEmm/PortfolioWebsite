@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ben McLeod | Portfolio 👋</title>
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="style.css">
+	<!-- Font Awesome Stylesheet -->
+</head>
+
+<body>
+
+	<!-- Navigation menu toggle for mobile users -->
+	<div id="menuToggler" aria-label="Navigation Menu Toggler">&#8801;</div> 
+
+	<!-- Navigation menu -->
+	<nav id="menu">
+		<a href="#home" aria-label="Home section">Home</a>
+		<!-- <a href="#skills" aria-label="Skills section">Skills</a> -->
+		<a href="#about" aria-label="About section">About</a>
+		<a href="#work" aria-label="My work section">Portfolio</a>
+		<a href="#location" aria-label="My location section">Location</a>
+	</nav>
+
+	<!-- Introduction -->
+	<header>
+		<button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="dark mode toggle">
+			<i id="icon" class="fa-regular fa-moon"></i>
+		</button>
+		<section class="intro" id="home">
+			<h1 class="section__title section__title--intro">
+				<span>Hi!</span> I'm <strong>Ben McLeod</strong>
+			</h1>
+			<p class="section__subtitle section__subtitle--intro" id="typer">&nbsp;</p>
+			<img src="./img/Ben.webp" alt="A picture of Ben McLeod in avatar form" class="intro__img">
+			<div class="socials">
+				<a href="mailto:hello@ben-mcleod.com" target="_blank"
+					aria-label="Contact Ben via Email: Link to email Ben"><i
+						class="fa-solid fa-square-envelope fa-2x"></i></a>
+				<a href="https://www.linkedin.com/in/ben-mcleod/" target="_blank"
+					aria-label="Connect with Ben on LinkedIn: Link to Bens LinkedIn"><i
+						class="fa-brands fa-linkedin fa-2x"></i></a>
+				<a href="https://github.com/BenEmm" target="_blank" aria-label="Link to Bens GitHub"><i
+						class="fa-brands fa-square-github fa-2x"></i></a>
+			</div>
+		</section>
+	</header>
+
+	<!-- Main content -->
+	<main>
+		<!-- My Skills Section -->
+		<section class="my-skills" id="skills">
+			<h2 class="section__title section__title--skills">What I do</h2>
+			<div class="skills">
+				<div class="skill">
+					<i class="fa-solid fa-laptop-code fa-2x"></i>
+					<h3>Web Development</h3>
+					<p>I specialize in designing and developing websites and web applications utilizing technologies
+						like HTML, CSS, JavaScript, PHP, and MySQL. My experience includes developing an eCommerce
+						website called "The Game Shop" focused on video game sales, as well as creating a personal
+						portfolio website showcasing my work and personal projects completed during my free time.</p>
+				</div>
+				<!-- End skill -->
+
+				<div class="skill">
+					<i class="fa-solid fa-user-shield fa-2x"></i>
+					<h3>Penetration Testing</h3>
+					<p>I offer website and web application penetration testing using skills acquired from my Penetration
+						Testing University module. As part of my final assessment, I produced a comprehensive report on
+						a web application focused on online sales using various tools, including Burp Suite, Nmap,
+						NetCat, OWASP ZAP, and Wireshark.</p>
+				</div>
+				<!-- End skill -->
+
+				<div class="skill">
+					<i class="fa-regular fa-hard-drive fa-2x"></i>
+					<h3>Secure Data </h3>
+					<p>I offer data destruction and recovery services for various devices using ADISA approved tools and
+						open-source methods. I have honed my skills through personal experience with NAS and gaming
+						computers and have worked with local companies and partners like <a
+							href="https://redkeyusb.com/" target="_blank"
+							aria-label="A Link to the Red Key USB website">Red
+							Key</a> to showcase their new and exciting products.</p>
+				</div>
+				<!-- End Skill -->
+			</div>
+			<!-- End Skills Section -->
+		</section>
+
+		<!-- About Me -->
+		<section class="about-me" id="about">
+			<h2 class="section__title section__title--about">Who I am</h2>
+			<p class="section__subtitle section__subtitle--about">Developer & Technologist</p>
+
+			<div class="about-me__body">
+				<p>I'm Ben! I'm 27 years old and currently study Computer Science at University. I'm working
+					towards a first overall and love what I do!</p>
+				<p>This website was created as my final assessment in my Front-End Web Development module, but it also
+					doubles as my portfolio!
+					It was important to me to create not only a project that I was proud of, but also one that I could
+					use in the real world once the module had finished.
+				</p>
+				<p>This website incorporates everything I've learned throughout my university degree,
+					from interaction design to front end web development.
+					It will be updated regularly to showcase my most recent work and achievements.
+				</p>
+				<div class="technologies">
+					<h3>Technologies I Use:</h3>
+					<i aria-hidden="true" class="fab fa-html5" title="HTML5"></i>
+					<span class="sr-only">HTML5</span>
+					<i aria-hidden="true" class="fab fa-css3-alt" title="CSS3"></i>
+					<span class="sr-only">CSS3</span>
+					<i aria-hidden="true" class="fab fa-js-square" title="JavaScript"></i>
+					<span class="sr-only">JavaScript</span>
+					<i aria-hidden="true" class="fa-brands fa-php" title="PHP"></i>
+					<span class="sr-only">PHP</span>
+					<i aria-hidden="true" class="fa-brands fa-java" title="Java"></i>
+					<span class="sr-only">Java</span>
+				</div>
+			</div>
+			<img src="./img/avatar.png" alt="A picture of Ben McLeod in cartoon avatar form" class="about-me__img">
+		</section>
+
+		<!-- My Work (This section has a different colour to the rest as a design choice) -->
+		<section class="my-work" id="work">
+			<h2 class="section__title">My Work</h2>
+			<p class="section__subtitle">What I've Made...</p>
+
+			<div class="portfolio">
+				<a href="https://thethreedaywar.com/" class="portfolio__item" target="_blank"
+					aria-label="Link to the website: The Three Day War">
+					<img src="./img/ukraine.webp" alt="Banner image for the website The Three Day War"
+						class="portfolio__img">
+				</a>
+				<a href="https://chrome.google.com/webstore/detail/search-bar-focus/obpjnhenhageebpgaaidbokphnniilji"
+					class="portfolio__item" target="_blank" aria-label="Link to the browser extension: Focus Search">
+					<img src="./img/FocusSearchBanner.webp" alt="Banner image for the browser addon Focus Search"
+						class="portfolio__img">
+				</a>
+			</div>
+			<p class="section__subtitle jobs">Who I've Worked For...</p>
+			<div class="portfolio">
+				<a href="javascript:void(0)" class="portfolio__item" aria-label="Next">
+					<img src="./img/next-logo.webp" alt="Banner image for the company Next PLC" class="portfolio__img">
+				</a>
+				<a href="javascript:void(0)" class="portfolio__item" aria-label="Victoria's Secret">
+					<img src="./img/VS.webp" alt="Banner image for the company Victoria's Secret"
+						class="portfolio__img">
+				</a>
+				<a href="javascript:void(0)" class="portfolio__item" aria-label="Reiss">
+					<img src="./img/reiss.webp" alt="Banner image for the company Reiss" class="portfolio__img">
+				</a>
+			</div>
+		</section>
+
+		<!-- My Location -->
+		<section class="my-location" id="location">
+			<h2 class="section__title">Where Am I?</h2>
+			<p class="section__subtitle">Leicester, UK</p>
+			<div id="map"></div>
+			<div class="weather">
+				<h3>Todays Weather:</h3>
+				<p class="temp">Temp: </p>
+				<p class="description">Weather: </p>
+			</div>
+		</section>
+
+		<a href="#home" class="back-to-top" aria-label="A button to return to the top of the page">
+			<i class="fa solid fa-arrow-up"></i>
+		</a>
+	</main>
+
+	<!-- Footer -->
+	<footer>
+		<p class="footerText">Author: Ben McLeod</p>
+		<a href="mailto:hello@ben-mcleod.com" target="_blank" aria-label="Contact Ben via Email: Link to email Ben"><i class="fa-solid fa-envelope fa-2x"></i></a>
+		<a href="https://www.linkedin.com/in/ben-mcleod/" target="_blank"><i
+				class="fa-brands fa-linkedin fa-2x"></i></a>
+		<a href="https://github.com/BenEmm" target="_blank" aria-label="Link to Bens GitHub"><i class="fa-brands fa-square-github fa-2x"></i></a>
+		<p id="copyright">&copy;</p>
+	</footer>
+
+
+	<!-- Javascript link -->
+	<script src="js/scripts.js"></script>
+	<!-- Google Maps API Script -->
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD12HEvKHs7d7zXf2DyVMCKOQE6sfYELw&map_ids=65284ab020577769&callback=initMap"></script>
+	<script src="https://kit.fontawesome.com/03fd48273d.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
