@@ -1,0 +1,14 @@
+site_name: Ben McLeod
+site_url: https://blog.ben-mcleod.com/
+site_dir: ../blog
+theme:
+  name: material
+  features:
+    - navigation.sections
+plugins:
+  - blog:
+      blog_dir: . 
+  - search
+  - tags
+nav:
+  - index.md
