@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Custom Properties to allow for easy reference and consistency with house style */
+:root {
+
+	/* Fonts */
+	--ff-main: 'Montserrat', sans-serif;
+	--ff-secondary: 'Montserrat', sans-serif;
+
+	/* Font weights */
+	--fw-reg: 300;
+	--fw-bold: 400;
+	--fw-super-bold: 700;
+
+	/* Colors */
+	--clr-light: #fff;
+	--clr-dark: #1e2124;
+	--clr-super-dark: #121212;
+	--clr-accent: #5865F2;
+	--clr-hover: #5865f2a9;
+
+	/* Heading sizes */
+	--fs-h1: 3rem;
+	--fs-h2: 2.25rem;
+	--fs-h3: 1.25rem;
+	--fs-body: 1rem;
+	--fs-copyright: 0.8rem;
+
+	/* Shadows */
+	--boxShadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.25);
+
+	/* Border radius */
+	--borderRadius: 5px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* General styles */
+
+body {
+	overflow-x: hidden;
+	/* Solves issue with horizontal scroll */
+	background-color: var(--clr-light);
+	color: var(--clr-dark);
+	font-family: var(--ff-main);
+	margin: 0;
+	font-size: var(--fs-body);
+	line-height: 1.6;
+}
+
+section {
+	padding: 5em 0.5em;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+	line-height: 1;
+	margin: 0;
+}
+
+h1 {
+	font-size: var(--fs-h1)
+}
+
+h2 {
+	font-size: var(--fs-h2)
+}
+
+h3 {
+	font-size: var(--fs-h3)
+}
+
+.section__title {
+	margin: 0.1em;
+	color: var(--clr-dark);
+}
+
+.section__title--intro {
+	font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+	/* Ensures my name is always on it's own line (if wrapped in strong tags) */
+	display: block;
+}
+
+.section__subtitle {
+	margin: 0;
+	font-size: var(--fs-h3);
+	color: var(--clr-light);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+	background: var(--clr-accent);
+	padding: .25em 1em;
+	font-family: var(--ff-secondary);
+	margin-bottom: 1em;
+	border-radius: var(--borderRadius);
+}
+
+span {
+	color: var(--clr-accent);
+	font-weight: var(--fw-super-bold);
+}
+
+/* Intro section */
+.intro {
+	position: relative;
+	z-index: 0;
+}
+
+.intro__img {
+	max-width: 100%;
+	width: 100%;
+}
+.browser-buttons-container {
+    display: flex;
+    justify-content: center; /* This centers the buttons in the container */
+    gap: 20px; /* This adds space between the buttons */
+}
+
+.browser-button {
+	display: flex;
+    align-items: center; /* This will vertically center the text */
+    justify-content: center; /* This will horizontally center the text */
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: var(--borderRadius);
+    text-decoration: none;
+    color: var(--clr-light);
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-main);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--boxShadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 150px; /* Ensure buttons are the same width */
+    height: 50px; 
+    text-align: center; /* Centers text horizontally, redundant with flex but a good fallback */
+}
+
+/* Chromium button styles */
+.chromium {
+    background-color: #4285F4; /* Chromium blue */
+}
+
+.chromium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(60deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    background-size: 300% 300%;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: var(--borderRadius);
+    opacity: 0;
+	background: linear-gradient(60deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    background-size: 300% 300%;
+    opacity: 0;
+}
+
+.chromium:hover::before {
+	opacity: 1;
+    animation: moveGradient 4s infinite alternate;
+}
+
+.chromium:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mozilla button styles */
+.mozilla {
+    background-color: #FF7139; /* Mozilla orange */
+}
+
+.mozilla::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(60deg, #FF9400, #FF7139, #D93E30, #FF9400);
+    background-size: 300% 300%;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: var(--borderRadius);
+    opacity: 0;
+	background: linear-gradient(60deg, #FF9400, #FF7139, #D93E30, #FF9400);
+    background-size: 300% 300%;
+    opacity: 0;
+}
+
+.mozilla:hover::before {
+	opacity: 1;
+    animation: moveGradient 4s infinite alternate;
+}
+
+.mozilla:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Remember to animate these to fade/slide in left to right later */
+.socials {
+	display: flex;
+	justify-content: center;
+}
+
+.socials a {
+	display: flex;
+	justify-content: center;
+	margin: 0.25em;
+	color: var(--clr-dark);
+	font-size: 1.25em;
+	text-decoration: none;
+	transition: ease-in-out 0.3s;
+}
+
+.socials a:hover {
+	color: var(--clr-accent);
+	transform: scale(1.2);
+}
+
+/* --------------------------------------------------------------- */
+
+/* My Skills Section */
+.my-skills {
+	background-color: var(--clr-dark);
+	background-image: url(./img/skills.webp);
+	background-size: cover;
+	background-blend-mode: multiply;
+	color: var(--clr-light);
+	text-align: center;
+	position: relative;
+	z-index: 0;
+}
+
+.my-skills i {
+	margin-bottom: 0.25em;
+}
+
+.section__title--skills {
+	color: var(--clr-accent);
+	position: relative;
+}
+
+/* Insert the underline AFTER the title, this allows for a small underline*/
+.section__title--skills::after {
+	content: '';
+	display: block;
+	width: 2.5em;
+	height: 1px;
+	margin: 0.5em auto 1.2em;
+	background: var(--clr-light);
+	opacity: 0.5;
+}
+
+.skill {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.skill a {
+	color: var(--clr-accent);
+	cursor: pointer;
+}
+
+.skill a:hover {
+	color: var(--clr-hover);
+}
+
+/* Addon Prompt Section */
+.addon-prompt {
+	text-align: center;
+	padding: 4em 0;
+	background-color: var(--clr-accent);
+	color: var(--clr-light);
+  }
+  
+  .addon-prompt .section__title--addon-prompt {
+	color: var(--clr-light);
+	margin-bottom: 1em;
+  }
+  
+  .addon-download-button {
+	display: inline-block;
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+	padding: 1em 2em;
+	border-radius: var(--borderRadius);
+	text-decoration: none;
+	font-weight: var(--fw-bold);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+  }
+  
+  .addon-download-button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(60deg, #ffdd00, #ff89c1, #c1b5ff, #6affd8);
+	background-size: 300% 300%;
+	z-index: -1;
+	transition: opacity 0.3s ease;
+	border-radius: var(--borderRadius);
+	opacity: 0;
+  }
+  
+  .addon-download-button:hover::before {
+	opacity: 1;
+  }
+  
+  .addon-download-button:hover {
+	color: var(--clr-light);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .addon-download-button::after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: var(--borderRadius);
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-image: linear-gradient(60deg, #ffdd00, #ff89c1, #c1b5ff, #6affd8);
+	background-size: 300% 300%;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+  }
+  
+  .addon-download-button:hover::after {
+	animation: moveGradient 4s infinite alternate;
+	opacity: 1;
+  }
+  
+  @keyframes moveGradient {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+
+.about-me {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 1rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--clr-accent);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	text-decoration: none;
+	transition: 0.25s ease-out;
+	color: var(--clr-light);
+	font-size: 1.5rem;
+	opacity: 0;
+}
+
+.back-to-top.active {
+	pointer-events: auto;
+	opacity: 1;
+	transition: 0.25s ease-out;
+}
+
+.back-to-top:hover {
+	transform: translateY(-2px);
+	background-color: var(--clr-hover);
+}
+
+footer {
+	text-align: center;
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+}
+
+.footerText {
+	margin-inline: auto;
+	border-bottom: 1px solid var(--clr-accent);
+	max-width: 200px;
+	color: var(--clr-light);
+}
+
+#copyright {
+	font-size: var(--fs-copyright);
+	margin: auto;
+	padding-bottom: 0.5em;
+}
+
+footer a {
+	text-decoration: none;
+	color: var(--clr-light);
+	padding: 0.5em;
+	transition: ease-in-out 0.25s;
+}
+
+footer a:hover {
+	color: var(--clr-accent);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 599px) {
+	.intro__img {
+	  width: 75%; /* Scale down image to 75% of its current size */
+	  margin: 0 auto; /* Center the image if it's not already */
+	}
+  }
+  
+@media (min-width: 600px) {
+
+	.intro {
+		display: grid;
+		width: min-content;
+		margin: 0 auto;
+		column-gap: 1em;
+		grid-template-areas:
+			"img title"
+			"img subtitle";
+		grid-template-columns: min-content max-content;
+		animation: fadeIn 1s ease-in-out;
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+			transform: translateY(-300px);
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.intro__img {
+		grid-area: img;
+		min-width: 250px;
+		position: relative;
+		z-index: 2;
+	}
+
+	.section__subtitle--intro {
+		align-self: start;
+		grid-column: -1 / 1;
+		grid-row: 2;
+		text-align: right;
+		position: relative;
+		left: -1.5em;
+		width: calc(100% + 1.5em);
+	}
+
+	.about-me {
+		display: grid;
+		grid-template-columns: 1fr 200px;
+		grid-template-areas:
+			"title img"
+			"subtitle img"
+			"text img";
+		column-gap: 2em;
+		position: relative;
+		z-index: 0;
+	}
+
+	.section__title--about {
+		grid-area: title;
+	}
+
+	.section__subtitle--about {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		position: relative;
+		left: -1em;
+		width: 100%;
+		padding-left: 1em;
+		padding-right: calc(200px + 4em);
+	}
+
+	.about-me__img {
+		grid-area: img;
+		position: relative;
+		z-index: 2;
+	}
+
+	.back-to-top {
+		border-radius: 0.75rem;
+		padding: 0.75rem;
+	}
+}
+
+@media (min-width: 800px) {
+
+	:root {
+		--fs-h1: 4.5rem;
+		--fs-h2: 3.75rem;
+		--fs-h3: 1.5rem;
+		--fs-body: 1.125rem;
+	}
+
+	.skills {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.skill+.skill {
+		margin-left: 2em;
+	}
+}
