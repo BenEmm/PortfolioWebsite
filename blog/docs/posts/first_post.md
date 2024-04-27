@@ -1,5 +1,5 @@
 ---
-title: "My first blog post!"
+title: "My First Blog Post!"
 date: 2024-04-27
 authors:
     - Ben
@@ -20,16 +20,17 @@ Before I could make this blog, I needed a way to actually update the website fas
 2. Commit those updates to GitHub
 
 3. Upload the local files manually to my hosting provider.
+    - Inevitably fumble with a 2FA code somewhere along the line.
 
 4. Hit the deploy button and beam the updates to the interwebs.
 
-This was... Tedious. It didn't lend itself well to creating content. Well, not anymore! I've streamlined the whole thing thanks to some clever work behind the scenes. I discovered that my hosting provider plays well with GitHub. This has allowed my to directly link my hosting with my websites GitHub repo, so every time I push updates to the main branch, boom - the changes are live. Thanks to this, my workflow now looks like this: 
+This was... Tedious. It didn't lend itself well to creating content. Well, not anymore! I've streamlined the whole thing thanks to some clever work behind the scenes. I discovered that my hosting provider plays well with GitHub. This has allowed me to directly link my hosting with my websites GitHub repo, so every time I push updates to the main branch, boom - the changes are live. Thanks to this, my workflow now looks like this: 
 
 1. Make the changes in VS Code.
 
 2. Commit the changes to GitHub - the changes are now live.
 
-And just like that, I've halved my workload!
+And just like that, I've halved my workload whilst also adding a blog!
 
 The last piece of the puzzle was figuring out where to put this blog, and that's where subdomains came to the rescue! I still wanted future employers and curious people to have a streamlined and neat way of learning about me, so I've kept the static site as it always was, and then span up 'blog.ben-mcleod.com' and now here we are, the main site isn't cluttered with blog posts and the only people that have the misfortune of seeing my ramblings are the poor souls that discover this page!
 
