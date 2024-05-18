@@ -9,12 +9,6 @@ categories:
 
 # HomeLab!
 
-<p>Listen to this blog post:</p>
-<audio controls>
-  <source src="assets/audio/HomeLabBlog.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 ## **What On Earth is a HomeLab?**
 
 In short, a HomeLab is... Whatever you want it to be! Thanks, cya!
