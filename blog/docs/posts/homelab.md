@@ -51,3 +51,6 @@ and with companies refreshing these devices every 3-6 years, that's a lot of mat
 In addition to keeping these computers out of landfill, I picked something that was low power. These HP Mini PC's idle at <7w, meaning to run these things all year should cost me less than £20. Combine that with the solar panels on my roof and this entire project runs itself from the power of the sun and nothing had to be *specifically* manufactured to make it happen, every component is reused and the power supplied renewable.
 
 ![Solar Panels](https://www.moneysavingexpert.com/content/dam/shutterstock_1988665238%20(1).jpg "Solar Panels")
+
+## Moving Forwards ##
+I plan on keeping this category alive and writing up what I got up to with my HomeLab. Hopefully it'll be useful to anyone that is interested in this kind of thing and at the very least it'll be good documentation for me when I inevitably break something!
