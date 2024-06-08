@@ -8,7 +8,7 @@ categories:
 ---
 
 # The Lab!
-![Ben's HomeLab](/public_html/img/HomeLab.jpg "Synology NAS and HP Mini PC's")
+![Ben's HomeLab](../public_html/img/HomeLab.jpg "Synology NAS and HP Mini PC's")
 
 
 ## **What Is All That Stuff?**
