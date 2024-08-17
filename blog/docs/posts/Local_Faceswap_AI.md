@@ -1,6 +1,6 @@
 ---
 title: "The Hottest Github Repo of August 2024"
-date: 2024-00-17
+date: 2024-08-17
 authors:
     - Ben
 categories:
