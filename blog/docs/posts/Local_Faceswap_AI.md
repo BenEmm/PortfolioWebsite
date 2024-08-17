@@ -20,7 +20,7 @@ What you're looking at is "Deep Live Cam" the brainchild of [hacksider](https://
 As you can see, it's pretty funny to live out your childhood fantasies and see what you would look like as your favorite childhood super hero, but more interesting to me was just how easy it was to get this software installed, and, how scary technology like this may become in the future. For the past 100 years, photo - and even more so - video evidence has been the gold standard in society, but now? Now the lines are blurred, perhaps forever.
 
 ### Installation ###
-Once all the prerequisites like chocolatey, python, git, ffmpeg, nvidia cude etc are installed, the entire software can be downloaded to a folder on your computer in a matter of seconds, and span up with one simple command:
+Once all the prerequisites like chocolatey, python, git, ffmpeg, nvidia cuda etc are installed, the entire software can be downloaded to a folder on your computer in a matter of seconds, and span up with one simple command:
 ```
 python run.py --execution-provider cuda
 ```
