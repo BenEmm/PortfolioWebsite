@@ -19,3 +19,16 @@ What you're looking at is "Deep Live Cam" the brainchild of [hacksider](https://
 
 As you can see, it's pretty funny to live out your childhood fantasies and see what you would look like as your favorite childhood super hero, but more interesting to me was just how easy it was to get this software installed, and, how scary technology like this may become in the future. For the past 100 years, photo - and even more so - video evidence has been the gold standard in society, but now? Now the lines are blurred, perhaps forever.
 
+### Installation ###
+Once all the prerequisites like chocolatey, python, git, ffmpeg, nvidia cude etc are installed, the entire software can be downloaded to a folder on your computer in a matter of seconds, and span up with one simple command:
+```
+python run.py --execution-provider cuda
+```
+
+Once open, you'll get a screen like the one below, which is extremely simple to operate:
+![Deep Cam Live UI](https://i.imgur.com/mac9qWX.png "Deep Cam Live UI")
+
+## Final Thoughts ##
+I don't really have anything profound to say about the tool if I'm honest. <br>I recall about 5 years ago NVIDIA released their own version of software like this which could be downloaded by anyone publicly and it blew the world away. It was very quickly taken down and only those that had downloaded copies could still run it. As technology advances, it looks like solo developers are now capable of developing tools that just 5 years ago, a behemoth like NVIDIA kept closely guarded.
+<br><br>What remains to be seen now is whether tools like this, especially their future, more developed versions, change the world as we know it, where video proof is no longer to be believed. Or, like photoshopping before it, will Deep Fakes become something that the human eye/brain evolves alongside. With the earliest versions fooling all of us, but as we learn what to look out for and what quirks Deep Fakes tend to have, will the trained eye be able to spot them a mile away?
+<br>Either way, it's an interesting time to be in tech!
