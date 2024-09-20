@@ -65,16 +65,39 @@ darkModeToggle.addEventListener("click", () => {
 
 // Typing effect for the homepage heading 
 let i = 0; // Current position in the message
-let message = 'Developer & Technologist'; // Message to be typed
+let messageIndex = 0; // Index for selecting different messages
+let messages = ['Developer & Technologist', 'Virtualisation Engineer', 'Information Security Analyst']; // List of messages to be typed
 let speed = 60; // Speed of typing (in ms)
+let deleteSpeed = 40; // Speed of deleting characters (in ms)
+let delay = 5000; // Delay after typing before deleting (5 seconds)
 
 function typer() {
-  if (i < message.length) { // If 'i' is less than the length of message
-    document.getElementById("typer").innerHTML += message.charAt(i); // Type the next letter
-    i++; // Incremement the position in the message ('i')
+  let message = messages[messageIndex]; // Get the current message
+
+  if (i < message.length) { // If 'i' is less than the length of the message
+    document.getElementById("typer").innerHTML = message.substring(0, i + 1) + '&nbsp;<span class="blinking-caret"></span>'; // Type the next letter, keep the non-breaking space and caret
+    i++; // Increment the position in the message ('i')
     setTimeout(typer, speed); // Timeout between placing letters to give the illusion of typing
+  } else {
+    // Once typing is finished, wait 5 seconds, then start deleting
+    setTimeout(deleter, delay);
   }
 }
+
+function deleter() {
+  let message = messages[messageIndex]; // Get the current message
+
+  if (i > 0) { // If there are still characters left to delete
+    document.getElementById("typer").innerHTML = message.substring(0, i - 1) + '&nbsp;<span class="blinking-caret"></span>'; // Remove the last character, keep the non-breaking space and caret
+    i--; // Decrement the position in the message ('i')
+    setTimeout(deleter, deleteSpeed); // Timeout between deleting characters
+  } else {
+    // Once the message is fully deleted, move to the next message
+    messageIndex = (messageIndex + 1) % messages.length; // Loop back to the first message if at the end
+    setTimeout(typer, speed); // Start typing the next message
+  }
+}
+
 
 // Automatically update the copyright year
 function updateCopyright() {

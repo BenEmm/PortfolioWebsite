@@ -141,6 +141,21 @@ h3 {
 	color: var(--clr-light);
 }
 
+.blinking-caret {
+	display: inline-block;
+	width: 2px; /* Ensures it doesn't cause shifting */
+	background-color: var(--clr-light); /* Or the same color as your text */
+	animation: blink 1s step-end infinite;
+	height: 1em; /* Match the height of the text */
+	vertical-align: text-bottom; /* Align the caret to the bottom of the text */
+  }
+  
+  
+  @keyframes blink {
+	from, to { opacity: 1; }
+	50% { opacity: 0; }
+  }
+
 .section__subtitle--intro,
 .section__subtitle--about {
 	background: var(--clr-accent);
@@ -524,6 +539,22 @@ footer a:hover {
 		left: -1.5em;
 		width: calc(100% + 1.5em);
 	}
+
+	.blinking-caret {
+		display: inline-block;
+		width: 2px; /* Ensures it doesn't cause shifting */
+		background-color: var(--clr-light); /* Or the same color as your text */
+		animation: blink 1s step-end infinite;
+		height: 1em; /* Match the height of the text */
+		vertical-align: text-bottom; /* Align the caret to the bottom of the text */
+	  }
+	  
+	  
+	  @keyframes blink {
+		from, to { opacity: 1; }
+		50% { opacity: 0; }
+	  }
+	  
 
 	.about-me {
 		display: grid;
