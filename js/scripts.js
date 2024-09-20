@@ -88,9 +88,9 @@ function deleter() {
   let message = messages[messageIndex]; // Get the current message
 
   if (i > 0) { // If there are still characters left to delete
-    document.getElementById("typer").innerHTML = message.substring(0, i - 1) + '&nbsp;<span class="blinking-caret"></span>'; // Remove the last character, keep the non-breaking space and caret
-    i--; // Decrement the position in the message ('i')
-    setTimeout(deleter, deleteSpeed); // Timeout between deleting characters
+    document.getElementById("typer").innerHTML = message.substring(0, i - 1) + '&nbsp;<span class="blinking-caret"></span>'; // Remove the last character, keep the non-breaking space and caret for styling
+    i--; // Decrement the position in the message
+    setTimeout(deleter, deleteSpeed); // Timeout between deleting characters to mimic realistic typing
   } else {
     // Once the message is fully deleted, move to the next message
     messageIndex = (messageIndex + 1) % messages.length; // Loop back to the first message if at the end
