@@ -143,18 +143,29 @@ h3 {
 
 .blinking-caret {
 	display: inline-block;
-	width: 2px; /* Ensures it doesn't cause shifting */
-	background-color: var(--clr-light); /* Or the same color as your text */
+	width: 2px;
+	/* Ensures it doesn't cause shifting */
+	background-color: var(--clr-light);
+	/* Or the same color as your text */
 	animation: blink 1s step-end infinite;
-	height: 1em; /* Match the height of the text */
-	vertical-align: text-bottom; /* Align the caret to the bottom of the text */
-  }
-  
-  
-  @keyframes blink {
-	from, to { opacity: 1; }
-	50% { opacity: 0; }
-  }
+	height: 1em;
+	/* Match the height of the text */
+	vertical-align: text-bottom;
+	/* Align the caret to the bottom of the text */
+}
+
+
+@keyframes blink {
+
+	from,
+	to {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+}
 
 .section__subtitle--intro,
 .section__subtitle--about {
@@ -310,18 +321,20 @@ nav a:hover {
 }
 
 .dark-mode-toggle {
-	position: absolute;
-	top: 1.25rem;
+	position: fixed;
+	/* stays in place even when scrolling */
+	top: calc(0.75em + 50px);
+	/* push below the banner */
 	left: 0.5rem;
+	z-index: 10002;
+	/* above banner and nav */
 	color: var(--clr-dark);
 	background: none;
 	font-size: 2em;
-	text-align: left;
 	cursor: pointer;
-	z-index: 1;
 	border: none;
-	transition: 0.5s ease;
 	padding-left: 1.5rem;
+	transition: 0.5s ease;
 }
 
 .about-me {
@@ -477,9 +490,81 @@ footer a:hover {
 	transform: scale(1.1);
 }
 
+/* IT Support Banner */
+#it-banner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #D32F2F;
+	/* bright accent color */
+	color: #fff;
+	font-family: var(--ff-main);
+	font-size: 1rem;
+	text-align: center;
+	padding: 0.75em 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10001;
+	/* above everything */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#it-banner button {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 1.25rem;
+	margin-left: 1em;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+/* Push nav down to sit below the banner */
+body.with-banner nav {
+	top: 3.5em;
+	/* adjust slightly taller to account for nav height */
+	transition: top 0.3s ease;
+}
+
+
+body.with-banner {
+	padding-top: 50px;
+	/* pushes content down so it doesn't overlap with banner */
+}
+
+/* Banner text */
+#it-banner p {
+	margin: 0;
+	/* remove default paragraph margin */
+	color: #ffffff;
+	/* text color */
+	font-family: var(--ff-main);
+	font-size: 1rem;
+}
+
+#it-banner p a {
+	color: #ffffff;
+	/* link color */
+	text-decoration: underline;
+}
+
+#it-banner p a:visited {
+	color: #ffffff;
+	/* visited links stay white */
+}
+
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
+
+	body.with-banner nav {
+		top: 3.5em;
+		/* adjust slightly taller to account for nav height */
+		transition: top 0.3s ease;
+	}
+
 
 	#menuToggler {
 		display: none;
@@ -542,19 +627,30 @@ footer a:hover {
 
 	.blinking-caret {
 		display: inline-block;
-		width: 2px; /* Ensures it doesn't cause shifting */
-		background-color: var(--clr-light); /* Or the same color as your text */
+		width: 2px;
+		/* Ensures it doesn't cause shifting */
+		background-color: var(--clr-light);
+		/* Or the same color as your text */
 		animation: blink 1s step-end infinite;
-		height: 1em; /* Match the height of the text */
-		vertical-align: text-bottom; /* Align the caret to the bottom of the text */
-	  }
-	  
-	  
-	  @keyframes blink {
-		from, to { opacity: 1; }
-		50% { opacity: 0; }
-	  }
-	  
+		height: 1em;
+		/* Match the height of the text */
+		vertical-align: text-bottom;
+		/* Align the caret to the bottom of the text */
+	}
+
+
+	@keyframes blink {
+
+		from,
+		to {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0;
+		}
+	}
+
 
 	.about-me {
 		display: grid;
@@ -594,8 +690,10 @@ footer a:hover {
 	}
 
 	.dark-mode-toggle {
-		position: fixed;
-		top: 5rem;
+		top: calc(0.75em + 50px);
+		/* keep it below banner */
+		left: 1rem;
+		/* adjust spacing for larger screens */
 	}
 }
 

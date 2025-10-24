@@ -1,4 +1,3 @@
-
 /* When the page has laoded, run each function.
    If the mobile website is being displayed, run the typer straight away
    Else, if the website is in desktop mode, delay the typer to let the animation finish */
@@ -98,7 +97,6 @@ function deleter() {
   }
 }
 
-
 // Automatically update the copyright year
 function updateCopyright() {
   const copyright = document.querySelector('#copyright');
@@ -151,8 +149,6 @@ function initMap() {
   });
 }
 
-
-
 // Weather variables
 const weather = document.querySelector('.weather'); // Access the weather div in the HTML.
 const description = document.querySelector('.description'); // Access the description element in the HTML.
@@ -161,36 +157,73 @@ const weatherImgUrl = 'http://openweathermap.org/img/wn/'; // Base URL for weath
 
 /* Get todays weather for Leicester using the Open Weather API */
 function getWeather() {
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=Leicester,gb&appid=2bf01b21a176bd96433e1ed723e5cc4b&units=metric&timezone=Europe/London') // Fetch the weather for Leicester, with metric units, and the timezone set to London (for day/night image icons)
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Leicester,gb&appid=2bf01b21a176bd96433e1ed723e5cc4b&units=metric&timezone=Europe/London')
     .then(response => response.json())
     .then(data => {
-      const iconValue = data['weather'][0]['icon']; // Get the icon value from the API.
-      const descriptionValue = data['weather'][0]['description'].toUpperCase(); // Get the description value from the API and convert to uppercase since that looks slightly better.
-      const tempValue = Math.round(data['main']['temp']) + '°C'; // Get the temp value from the API and round it to the nearest whole number then add the Celsius symbol.
+      const iconValue = data['weather'][0]['icon'];
+      const descriptionValue = data['weather'][0]['description'].toUpperCase();
+      const tempValue = Math.round(data['main']['temp']) + '°C';
 
-      // Create the image element for the weather icon.
       const iconImg = document.createElement('img');
-
-      // Set the source of the image element (equal to the open weather icon url + the icon value from the API)
       iconImg.src = weatherImgUrl + iconValue + '@2x.png';
-
-      // Add alt text for the image element which includes the temp and description.
       iconImg.alt = "Todays weather is " + tempValue + ' with ' + descriptionValue + ".";
-
-      // Insert the Weather icon as the second child of the weather div (after the title).
       weather.insertBefore(iconImg, weather.childNodes[2]);
 
-      // Insert the description of todays weather e.g. 'Cloudy', 'Sunny' etc.
       description.innerHTML = descriptionValue;
-
-      // Insert the todays temp.
       temp.innerHTML = tempValue;
     })
-
-    .catch(err => console.log('Unable to get weather data: ', err)); // Log any errors to console.
+    .catch(err => console.log('Unable to get weather data: ', err));
 }
 
+// IT Support Banner & Hamburger Fix
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('it-banner');
+  const closeBtn = document.getElementById('close-it-banner');
+  const nav = document.querySelector('nav');
+  const darkModeToggle = document.querySelector('#dark-mode-toggle');
+  const menuToggler = document.querySelector('#menu-toggler');
 
+  if (banner) {
+    document.body.classList.add('with-banner');
 
+    // Push nav down dynamically based on banner height
+    const adjustNav = () => {
+      nav.style.top = banner.offsetHeight + 'px';
+    };
+    adjustNav();
+    window.addEventListener('resize', adjustNav);
 
+    closeBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+      nav.style.top = '0';
+      document.body.classList.remove('with-banner');
+      positionHamburger();
+      positionDarkModeToggle();
+    });
+  }
 
+  // Position hamburger below banner + nav
+  const positionHamburger = () => {
+    const bannerHeight = banner && banner.style.display !== 'none' ? banner.offsetHeight : 0;
+    const navHeight = nav.offsetHeight;
+    if (menuToggler) {
+      menuToggler.style.top = bannerHeight + navHeight + 10 + 'px';
+    }
+  };
+
+  // Position dark mode toggle below banner + nav
+  const positionDarkModeToggle = () => {
+    const bannerHeight = banner && banner.style.display !== 'none' ? banner.offsetHeight : 0;
+    const navHeight = nav.offsetHeight;
+    if (darkModeToggle) {
+      darkModeToggle.style.top = bannerHeight + navHeight + 10 + 'px';
+    }
+  };
+
+  positionHamburger();
+  positionDarkModeToggle();
+  window.addEventListener('resize', () => {
+    positionHamburger();
+    positionDarkModeToggle();
+  });
+});
