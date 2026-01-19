@@ -4,11 +4,9 @@
 window.onload = function () {
   if (window.innerWidth < 600) {
     typer(); // Run the typer without a delay
-    getWeather(); // Get the weather for Leicester
     updateCopyright(); // Automatically update the copyright year
   } else {
     setTimeout(typer, 750); // Wait for the css animation to finish before typing
-    getWeather(); // Get the weather for Leicester
     updateCopyright(); // Automatically update the copyright year
   }
 }
@@ -147,32 +145,6 @@ function initMap() {
   marker.addListener("click", () => {
     infoWindow.open(map, marker);
   });
-}
-
-// Weather variables
-const weather = document.querySelector('.weather'); // Access the weather div in the HTML.
-const description = document.querySelector('.description'); // Access the description element in the HTML.
-const temp = document.querySelector('.temp'); // Access the temp element in the HTML.
-const weatherImgUrl = 'http://openweathermap.org/img/wn/'; // Base URL for weather icons, the icon value is appended to this URL.
-
-/* Get todays weather for Leicester using the Open Weather API */
-function getWeather() {
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=Leicester,gb&appid=2bf01b21a176bd96433e1ed723e5cc4b&units=metric&timezone=Europe/London')
-    .then(response => response.json())
-    .then(data => {
-      const iconValue = data['weather'][0]['icon'];
-      const descriptionValue = data['weather'][0]['description'].toUpperCase();
-      const tempValue = Math.round(data['main']['temp']) + '°C';
-
-      const iconImg = document.createElement('img');
-      iconImg.src = weatherImgUrl + iconValue + '@2x.png';
-      iconImg.alt = "Todays weather is " + tempValue + ' with ' + descriptionValue + ".";
-      weather.insertBefore(iconImg, weather.childNodes[2]);
-
-      description.innerHTML = descriptionValue;
-      temp.innerHTML = tempValue;
-    })
-    .catch(err => console.log('Unable to get weather data: ', err));
 }
 
 // IT Support Banner & Hamburger Fix
