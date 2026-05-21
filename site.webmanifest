@@ -1,0 +1,17 @@
+{
+  "name": "Ben McLeod",
+  "short_name": "Ben McLeod",
+  "description": "Portfolio website for Ben McLeod, IT professional.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ea",
+  "theme_color": "#101715",
+  "icons": [
+    {
+      "src": "/img/avatar.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

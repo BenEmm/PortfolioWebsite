@@ -1,28 +1,38 @@
-# YML code for blog
 site_name: Ben McLeod
+site_description: Practical IT notes from Ben McLeod covering Windows, productivity, infrastructure, and support.
+site_author: Ben McLeod
 site_url: https://blog.ben-mcleod.com/
 site_dir: ../blog/site
 docs_dir: ../blog/docs
+
 theme:
   name: material
+  favicon: assets/images/favicon.png
   features:
     - navigation.sections
-    # Adds Previous and Next arrows to the footer - navigation.footer
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/portfolio-theme.css
+
 plugins:
   - blog:
-      blog_dir: . 
+      blog_dir: .
   - search
   - tags
+
 nav:
   - index.md
+
 extra:
-# Disable the standard footer
   generator: false
-# Add social links to the footer
   social:
-   - icon: fontawesome/brands/github 
-     link: https://github.com/BenEmm
-   - icon: fontawesome/brands/linkedin 
-     link: https://www.linkedin.com/in/ben-mcleod/
-copyright: Copyright &copy; 2024 Ben McLeod
-  
+    - icon: fontawesome/brands/github
+      link: https://github.com/BenEmm
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ben-mcleod/
+
+copyright: Copyright &copy; 2026 Ben McLeod

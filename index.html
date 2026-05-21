@@ -5,76 +5,243 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ben McLeod | Portfolio 👋</title>
-	<!-- Main Stylesheet -->
+	<meta name="description"
+		content="Ben McLeod is an IT professional specialising in virtualisation, information security, documentation, automation, and practical IT support.">
+	<meta name="author" content="Ben McLeod">
+	<meta name="theme-color" content="#101715">
+	<link rel="canonical" href="https://www.ben-mcleod.com/">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Ben McLeod | IT Professional">
+	<meta property="og:description"
+		content="Virtualisation, information security, documentation, automation, and practical IT support.">
+	<meta property="og:url" content="https://www.ben-mcleod.com/">
+	<meta property="og:image" content="https://www.ben-mcleod.com/img/Ben.webp">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Ben McLeod | IT Professional">
+	<meta name="twitter:description"
+		content="Virtualisation, information security, documentation, automation, and practical IT support.">
+	<meta name="twitter:image" content="https://www.ben-mcleod.com/img/Ben.webp">
 	<link rel="stylesheet" href="style.css">
-	<!-- Favicon -->
-	<link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-	<!-- Font Awesome Stylesheet -->
+	<link rel="icon" href="./img/avatar.png" type="image/png">
 </head>
 
 <body>
-	<!-- Top Banner -->
 	<div id="it-banner">
 		<p>🚨 In a crisis? Need IT Support? <a href="mailto:hello@ben-mcleod.com?subject=IT%20Support%20Request">Contact
 				Me</a></p>
 		<button id="close-it-banner" aria-label="Close Banner">&times;</button>
 	</div>
-	<!-- Navigation menu toggle for mobile users -->
-	<div id="menuToggler" aria-label="Navigation Menu Toggler">&#8801;</div>
 
-	<!-- Navigation menu -->
-	<nav id="menu">
-		<a href="#home" aria-label="Home section">Home</a>
-		<!-- <a href="#skills" aria-label="Skills section">Skills</a> -->
-		<a href="#about" aria-label="About section">About</a>
-		<a href="#work" aria-label="My work section">Portfolio</a>
-		<a href="#location" aria-label="My location section">Location</a>
+	<button id="menuToggler" aria-label="Navigation Menu Toggler" aria-expanded="false" aria-controls="menu">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<nav id="menu" aria-label="Primary navigation">
+		<div class="nav-status" aria-hidden="true">
+			<span class="nav-status__light"></span>
+			<span>Ben McLeod</span>
+		</div>
+		<div class="nav-links">
+			<a href="#home" aria-label="Home section">Home</a>
+			<a href="#about" aria-label="About section">About</a>
+			<a href="#work" aria-label="My work section">Portfolio</a>
+			<a href="#location" aria-label="My location section">Location</a>
+		</div>
 	</nav>
 
-	<!-- Introduction -->
-	<header>
+	<header class="site-hero" id="home">
 		<button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="dark mode toggle">
-			<i id="icon" class="fa-regular fa-moon"></i>
+			<i id="icon" class="fa-regular fa-moon" aria-hidden="true"></i>
 		</button>
-		<section class="intro" id="home">
-			<h1 class="section__title section__title--intro">
-				<span>Hi!</span> I'm <strong>Ben McLeod</strong>
-			</h1>
-			<p class="section__subtitle section__subtitle--intro" id="typer">&nbsp;</p>
-			<img src="./img/Ben.webp" alt="A picture of Ben McLeod in avatar form" class="intro__img">
-			<div class="socials">
-				<a href="mailto:hello@ben-mcleod.com" target="_blank"
-					aria-label="Contact Ben via Email: Link to email Ben"><i
-						class="fa-solid fa-square-envelope fa-2x"></i></a>
-				<a href="https://www.linkedin.com/in/ben-mcleod/" target="_blank"
-					aria-label="Connect with Ben on LinkedIn: Link to Bens LinkedIn"><i
-						class="fa-brands fa-linkedin fa-2x"></i></a>
-				<a href="https://github.com/BenEmm" target="_blank" aria-label="Link to Bens GitHub"><i
-						class="fa-brands fa-square-github fa-2x"></i></a>
-				<a href="https://blog.ben-mcleod.com/" target="_blank" aria-label="Link to Bens Blog"><i
-						class="fa-solid fa-cube fa-2x"></i></a>
+
+		<section class="intro">
+			<div class="intro__content">
+				<p class="eyebrow">Infrastructure // Virtualisation // Support</p>
+				<h1 class="section__title section__title--intro">
+					<span>Hi!</span> I'm <strong>Ben McLeod</strong>
+				</h1>
+				<p class="section__subtitle section__subtitle--intro" id="typer">&nbsp;</p>
+				<div class="socials">
+					<a href="mailto:hello@ben-mcleod.com" target="_blank"
+						aria-label="Contact Ben via Email: Link to email Ben">
+						<svg aria-hidden="true" viewBox="0 0 24 24">
+							<path d="M3.75 5h16.5A1.75 1.75 0 0 1 22 6.75v10.5A1.75 1.75 0 0 1 20.25 19H3.75A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Zm.78 2 7.47 5.1L19.47 7H4.53Zm15.47 1.9-7.43 5.06a1 1 0 0 1-1.14 0L4 8.9V17h16V8.9Z" />
+						</svg>
+					</a>
+					<a href="https://www.linkedin.com/in/ben-mcleod/" target="_blank"
+						aria-label="Connect with Ben on LinkedIn: Link to Bens LinkedIn">
+						<svg aria-hidden="true" viewBox="0 0 24 24">
+							<path d="M6.94 8.98H3.82V20h3.12V8.98ZM7.2 5.58A1.79 1.79 0 1 0 3.62 5.6a1.79 1.79 0 0 0 3.58-.02ZM20.38 13.96c0-3.08-1.64-5.12-4.3-5.12a3.7 3.7 0 0 0-3.34 1.84v-1.7H9.76V20h3.1v-5.46c0-1.6.75-2.56 2.1-2.56 1.24 0 1.82.8 1.82 2.46V20h3.1v-6.04Z" />
+						</svg>
+					</a>
+					<a href="https://github.com/BenEmm" target="_blank" aria-label="Link to Bens GitHub">
+						<svg aria-hidden="true" viewBox="0 0 24 24">
+							<path d="M12 2.25a9.75 9.75 0 0 0-3.08 19c.48.09.66-.2.66-.46v-1.7c-2.7.58-3.27-1.15-3.27-1.15-.44-1.1-1.08-1.4-1.08-1.4-.88-.6.07-.59.07-.59.98.07 1.5 1 1.5 1 .86 1.48 2.27 1.05 2.82.8.09-.62.34-1.05.62-1.29-2.16-.25-4.42-1.08-4.42-4.8 0-1.06.38-1.92 1-2.6-.1-.25-.43-1.24.1-2.57 0 0 .82-.26 2.68 1a9.2 9.2 0 0 1 4.88 0c1.86-1.26 2.68-1 2.68-1 .53 1.33.2 2.32.1 2.57.62.68 1 1.54 1 2.6 0 3.73-2.27 4.55-4.43 4.79.35.3.66.9.66 1.8v2.55c0 .26.18.56.67.46A9.75 9.75 0 0 0 12 2.25Z" />
+						</svg>
+					</a>
+					<a href="https://blog.ben-mcleod.com/" target="_blank" aria-label="Link to Bens Blog">
+						<svg aria-hidden="true" viewBox="0 0 24 24">
+							<path d="m12 2.3 8.25 4.65v9.95L12 21.7l-8.25-4.8V6.95L12 2.3Zm0 2.3L6.35 7.78 12 11l5.65-3.22L12 4.6ZM5.75 9.5v6.24L11 18.8v-6.04L5.75 9.5Zm12.5 0L13 12.76v6.04l5.25-3.06V9.5Z" />
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="hero-console">
+				<div class="console-topbar">
+					<button type="button" class="window-control window-control--close" aria-hidden="true" tabindex="-1"></button>
+					<button type="button" class="window-control window-control--minimise" aria-hidden="true" tabindex="-1"></button>
+					<button type="button" class="window-control window-control--maximise" data-profile-open
+						aria-label="Open expanded profile"></button>
+				</div>
+				<div class="console-grid">
+					<div class="console-profile">
+						<img src="./img/Ben.webp" alt="Ben McLeod">
+					</div>
+					<div class="console-readout">
+						<span class="readout-label">mode:</span>
+						<strong>IT Professional</strong>
+					</div>
+					<div class="console-readout">
+						<span class="readout-label">base:</span>
+						<strong>Leicester, UK</strong>
+					</div>
+					<div class="console-terminal">
+						<p>&gt; keep systems stable</p>
+						<p>&gt; reduce vulnerabilities</p>
+						<p>&gt; build documentation</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	</header>
 
-	<!-- Main content -->
+	<section class="profile-panel" id="profile-panel" role="dialog" aria-modal="true" aria-labelledby="profile-panel-title"
+		hidden>
+		<div class="profile-panel__window">
+			<div class="profile-panel__bar">
+				<div class="console-topbar profile-panel__controls">
+					<button type="button" class="window-control window-control--close" data-profile-close
+						aria-label="Close expanded profile"></button>
+					<button type="button" class="window-control window-control--minimise" data-profile-close
+						aria-label="Minimise expanded profile"></button>
+					<span class="window-control window-control--maximise" aria-hidden="true"></span>
+				</div>
+				<button type="button" class="profile-panel__close" data-profile-close aria-label="Close expanded profile">
+					&times;
+				</button>
+			</div>
+			<div class="profile-panel__content">
+				<div class="profile-panel__intro">
+					<img src="./img/Ben.webp" alt="Ben McLeod">
+					<div>
+						<p class="eyebrow">Expanded Profile</p>
+						<h2 id="profile-panel-title">Ben McLeod</h2>
+						<p class="section__subtitle">IT Professional</p>
+					</div>
+					<div class="profile-panel__readouts" aria-label="Profile summary">
+						<div class="console-readout">
+							<span class="readout-label">mode:</span>
+							<strong>IT Professional</strong>
+						</div>
+						<div class="console-readout">
+							<span class="readout-label">base:</span>
+							<strong>Leicester, UK</strong>
+						</div>
+						<div class="console-terminal">
+							<p>&gt; keep systems stable</p>
+							<p>&gt; reduce vulnerabilities</p>
+							<p>&gt; build documentation</p>
+						</div>
+					</div>
+				</div>
+				<section class="profile-panel__section profile-panel__section--about" aria-label="Who I am section">
+					<div class="profile-panel__section-heading profile-panel__section-heading--feature">
+						<p class="eyebrow">Operator Notes</p>
+						<h3>Who I am</h3>
+						<p class="section__subtitle">IT Professional</p>
+					</div>
+					<div class="profile-panel__about">
+						<div>
+							<p>I’m Ben, a Virtualisation Engineer and Information Security Analyst with several years of experience
+								across infrastructure, virtualisation, disaster recovery, documentation, automation, and information
+								security. I also hold a First Class degree in Computer Science and am a member of the British
+								Computer Society.</p>
+						</div>
+						<div>
+							<p>IT has been part of my life for as long as I can remember, and I’ve been lucky enough to turn that
+							interest into a career. Over the years, I’ve worked across environments ranging from small
+							businesses to large enterprise setups, helping to keep systems stable, secure, and manageable.</p>
+						</div>
+						<div>
+							<p>I’m particularly interested in practical IT that makes life easier for the people relying on it.
+							Whether that’s improving infrastructure, reducing vulnerabilities, writing clear documentation, or
+							automating the boring bits, I like building solutions that are useful, reliable, and easy to
+							support.</p>
+						</div>
+					</div>
+				</section>
+				<section class="profile-panel__section" aria-label="Compact What I do section">
+					<div class="profile-panel__section-heading">
+						<p class="eyebrow">Service Stack</p>
+						<h3>What I do</h3>
+					</div>
+					<div class="profile-panel__skills">
+						<div class="profile-panel__skill">
+							<i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+							<h3>Virtualisation</h3>
+							<p>I design, develop, and maintain cutting-edge virtual solutions using VM Ware, Azure, and Proxmox.
+								I've implemented robust solutions for SMEs and government departments, managing
+								virtual servers and desktops, crafting secure SFTP solutions, and deploying monitoring systems.
+								My experience covers various aspects of virtualization at all operational levels.</p>
+						</div>
+						<div class="profile-panel__skill">
+							<i class="fa-solid fa-book-open" aria-hidden="true"></i>
+							<h3>Documentation</h3>
+							<p>I am passionate about documentation, creating clear and practical resources for business
+								continuity and operational efficiency.  I have developed disaster
+								recovery plans, standard operating procedures, and onboarding guides for new starters, ensuring
+								knowledge is preserved and accessible. I'm familiar with common tools for producing structured,
+								resilient, and user-friendly documentation.</p>
+						</div>
+						<div class="profile-panel__skill">
+							<i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+							<h3>IT Support</h3>
+							<p>I specialize in IT support for both on premises architecture and cloud environments. I've
+								supported
+								organizations with as little as two people all the way
+								up to government agencies. I've also supported a wide range of technologies, including Windows,
+								macOS,
+								Linux, and Android. I have a deep familiarity with
+								OneDrive, SharePoint, Windows Server, Windows 10/11, VM Ware, and Azure.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+
 	<main>
-		<!-- My Skills Section -->
 		<section class="my-skills" id="skills">
-			<h2 class="section__title section__title--skills">What I do</h2>
+			<div class="section-heading">
+				<p class="eyebrow">Service Stack</p>
+				<h2 class="section__title section__title--skills">What I do</h2>
+			</div>
 			<div class="skills">
 				<div class="skill">
-					<i class="fa-solid fa-laptop-code fa-2x"></i>
+					<i class="fa-solid fa-laptop-code fa-2x" aria-hidden="true"></i>
 					<h3>Virtualisation</h3>
 					<p>I design, develop, and maintain cutting-edge virtual solutions using VM Ware, Azure, and Proxmox.
 						I've implemented robust solutions for SMEs and government departments, managing
 						virtual servers and desktops, crafting secure SFTP solutions, and deploying monitoring systems.
 						My experience covers various aspects of virtualization at all operational levels.</p>
 				</div>
-				<!-- End skill -->
 
 				<div class="skill">
-					<i class="fa-solid fa-book-open fa-2x"></i>
+					<i class="fa-solid fa-book-open fa-2x" aria-hidden="true"></i>
 					<h3>Documentation</h3>
 					<p>I am passionate about documentation, creating clear and practical resources for business
 						continuity and operational efficiency.  I have developed disaster
@@ -82,10 +249,9 @@
 						knowledge is preserved and accessible. I'm familiar with common tools for producing structured,
 						resilient, and user-friendly documentation.</p>
 				</div>
-				<!-- End skill -->
 
 				<div class="skill">
-					<i class="fa-solid fa-screwdriver-wrench fa-2x"></i>
+					<i class="fa-solid fa-screwdriver-wrench fa-2x" aria-hidden="true"></i>
 					<h3>IT Support</h3>
 					<p>I specialize in IT support for both on premises architecture and cloud environments. I've
 						supported
@@ -94,17 +260,16 @@
 						macOS,
 						Linux, and Android. I have a deep familiarity with
 						OneDrive, SharePoint, Windows Server, Windows 10/11, VM Ware, and Azure.</p>
-					</p>
 				</div>
-				<!-- End Skill -->
 			</div>
-			<!-- End Skills Section -->
 		</section>
 
-		<!-- About Me -->
 		<section class="about-me" id="about">
-			<h2 class="section__title section__title--about">Who I am</h2>
-			<p class="section__subtitle section__subtitle--about">IT Professional</p>
+			<div class="about-heading">
+				<p class="eyebrow">Operator Notes</p>
+				<h2 class="section__title section__title--about">Who I am</h2>
+				<p class="section__subtitle section__subtitle--about">IT Professional</p>
+			</div>
 
 			<div class="about-me__body">
 				<p>I’m Ben, a Virtualisation Engineer and Information Security Analyst with several years of experience
@@ -132,13 +297,14 @@
 					<span class="sr-only">Automation/Code</span>
 				</div>
 			</div>
-			<img src="./img/avatar.png" alt="A picture of Ben McLeod in cartoon avatar form" class="about-me__img">
 		</section>
 
-		<!-- My Work (This section has a different colour to the rest as a design choice) -->
 		<section class="my-work" id="work">
-			<h2 class="section__title">My Work</h2>
-			<p class="section__subtitle">What I've Made...</p>
+			<div class="section-heading">
+				<p class="eyebrow">Built & Trusted</p>
+				<h2 class="section__title">My Work</h2>
+				<p class="section__subtitle">What I've Made...</p>
+			</div>
 
 			<div class="portfolio">
 				<a href="https://passblaster.ben-mcleod.com/" class="portfolio__item" target="_blank"
@@ -153,55 +319,71 @@
 				</a>
 			</div>
 			<p class="section__subtitle jobs">Who I've Worked For...</p>
-			<div class="portfolio">
-				<a href="javascript:void(0)" class="portfolio__item" aria-label="Next">
+			<div class="portfolio portfolio--logos">
+				<div class="portfolio__item portfolio__item--static" aria-label="Next">
 					<img src="./img/next-logo.webp" alt="Banner image for the company Next PLC" class="portfolio__img">
-				</a>
-				<a href="javascript:void(0)" class="portfolio__item" aria-label="Victoria's Secret">
-					<img src="./img/New_brand_thumb.jpg" alt="Banner image for the British Geological Survey"
+				</div>
+				<div class="portfolio__item portfolio__item--static" aria-label="Victoria's Secret">
+					<img src="./img/New_brand_thumb.jpg" alt="Banner image for Victoria's Secret"
 						class="portfolio__img">
-				</a>
-				<a href="javascript:void(0)" class="portfolio__item" aria-label="Tela Technology">
+				</div>
+				<div class="portfolio__item portfolio__item--static" aria-label="Tela Technology">
 					<img src="./img/Tela-Technology.webp" alt="Banner image for the company Tela Technology"
 						class="portfolio__img">
-				</a>
+				</div>
 			</div>
 		</section>
 
-		<!-- My Location -->
 		<section class="my-location" id="location">
-			<h2 class="section__title">Where Am I Based?</h2>
-			<p class="section__subtitle">Leicester, UK</p>
-			<div id="map"></div>
+			<div class="section-heading">
+				<p class="eyebrow">Local Context</p>
+				<h2 class="section__title">Where Am I Based?</h2>
+				<p class="section__subtitle">Leicester, UK</p>
+			</div>
+			<div id="map" aria-label="Map showing Leicester, UK">
+				<iframe
+					title="Map showing Leicester, UK"
+					src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2420%2C52.5740%2C-1.0370%2C52.7030&amp;layer=mapnik&amp;marker=52.6369%2C-1.1398"
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
 		</section>
 
 		<a href="#home" class="back-to-top" aria-label="A button to return to the top of the page">
-			<i class="fa solid fa-arrow-up"></i>
+			<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
 		</a>
 	</main>
 
-	<!-- Footer -->
 	<footer>
 		<p class="footerText">Author: Ben McLeod</p>
-		<a href="mailto:hello@ben-mcleod.com" target="_blank" aria-label="Contact Ben via Email: Link to email Ben"><i
-				class="fa-solid fa-envelope fa-2x"></i></a>
-		<a href="https://www.linkedin.com/in/ben-mcleod/" target="_blank"><i
-				class="fa-brands fa-linkedin fa-2x"></i></a>
-		<a href="https://github.com/BenEmm" target="_blank" aria-label="Link to Bens GitHub"><i
-				class="fa-brands fa-square-github fa-2x"></i></a>
-		<a href="https://blog.ben-mcleod.com/" target="_blank" aria-label="Link to Bens Blog"><i
-				class="fa-solid fa-cube fa-2x"></i></a>
+		<div class="footer-socials">
+			<a href="mailto:hello@ben-mcleod.com" target="_blank" aria-label="Contact Ben via Email: Link to email Ben">
+				<svg aria-hidden="true" viewBox="0 0 24 24">
+					<path d="M3.75 5h16.5A1.75 1.75 0 0 1 22 6.75v10.5A1.75 1.75 0 0 1 20.25 19H3.75A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Zm.78 2 7.47 5.1L19.47 7H4.53Zm15.47 1.9-7.43 5.06a1 1 0 0 1-1.14 0L4 8.9V17h16V8.9Z" />
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/ben-mcleod/" target="_blank"
+				aria-label="Connect with Ben on LinkedIn: Link to Bens LinkedIn">
+				<svg aria-hidden="true" viewBox="0 0 24 24">
+					<path d="M6.94 8.98H3.82V20h3.12V8.98ZM7.2 5.58A1.79 1.79 0 1 0 3.62 5.6a1.79 1.79 0 0 0 3.58-.02ZM20.38 13.96c0-3.08-1.64-5.12-4.3-5.12a3.7 3.7 0 0 0-3.34 1.84v-1.7H9.76V20h3.1v-5.46c0-1.6.75-2.56 2.1-2.56 1.24 0 1.82.8 1.82 2.46V20h3.1v-6.04Z" />
+				</svg>
+			</a>
+			<a href="https://github.com/BenEmm" target="_blank" aria-label="Link to Bens GitHub">
+				<svg aria-hidden="true" viewBox="0 0 24 24">
+					<path d="M12 2.25a9.75 9.75 0 0 0-3.08 19c.48.09.66-.2.66-.46v-1.7c-2.7.58-3.27-1.15-3.27-1.15-.44-1.1-1.08-1.4-1.08-1.4-.88-.6.07-.59.07-.59.98.07 1.5 1 1.5 1 .86 1.48 2.27 1.05 2.82.8.09-.62.34-1.05.62-1.29-2.16-.25-4.42-1.08-4.42-4.8 0-1.06.38-1.92 1-2.6-.1-.25-.43-1.24.1-2.57 0 0 .82-.26 2.68 1a9.2 9.2 0 0 1 4.88 0c1.86-1.26 2.68-1 2.68-1 .53 1.33.2 2.32.1 2.57.62.68 1 1.54 1 2.6 0 3.73-2.27 4.55-4.43 4.79.35.3.66.9.66 1.8v2.55c0 .26.18.56.67.46A9.75 9.75 0 0 0 12 2.25Z" />
+				</svg>
+			</a>
+			<a href="https://blog.ben-mcleod.com/" target="_blank" aria-label="Link to Bens Blog">
+				<svg aria-hidden="true" viewBox="0 0 24 24">
+					<path d="m12 2.3 8.25 4.65v9.95L12 21.7l-8.25-4.8V6.95L12 2.3Zm0 2.3L6.35 7.78 12 11l5.65-3.22L12 4.6ZM5.75 9.5v6.24L11 18.8v-6.04L5.75 9.5Zm12.5 0L13 12.76v6.04l5.25-3.06V9.5Z" />
+				</svg>
+			</a>
+		</div>
 		<p id="copyright">&copy;</p>
 	</footer>
 
-
-	<!-- Javascript link -->
 	<script src="js/scripts.js"></script>
-	<!-- Google Maps API Script -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD12HEvKHs7d7zXf2DyVMCKOQE6sfYELw&map_ids=65284ab020577769&callback=initMap"></script>
 	<script src="https://kit.fontawesome.com/03fd48273d.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
