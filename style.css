@@ -1239,7 +1239,8 @@ main {
 	align-items: center;
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	/* Default to a single column on small screens so logos are readable on mobile */
+	grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .portfolio__item {
@@ -1286,7 +1287,8 @@ main {
 	cursor: default;
 	display: flex;
 	justify-content: center;
-	min-height: 7rem;
+	/* larger min height on small screens so logos remain visible */
+	min-height: clamp(6rem, 10vw, 10rem);
 	padding: 0;
 }
 
@@ -1313,12 +1315,14 @@ main {
 .portfolio__item--static .portfolio__img,
 .portfolio__item--static:hover .portfolio__img {
 	background: transparent;
-	height: 100%;
-	max-height: none;
 	object-fit: contain;
 	padding: 0;
 	transform: none;
-	width: 100%;
+	/* let logos keep their aspect ratio and centre within the item without being stretched to full width */
+	width: auto;
+	max-width: 80%;
+	height: auto;
+	max-height: 85%;
 }
 
 .jobs {
