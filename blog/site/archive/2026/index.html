@@ -22,7 +22,7 @@
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/blog-favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -99,7 +99,7 @@
     <a href="../.." title="Ben McLeod" class="md-header__button md-logo" aria-label="Ben McLeod" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5v14H4V5zm0-2H4c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2m-2 12H6v2h12zm-8-8H6v6h4zm2 2h6V7h-6zm6 2h-6v2h6z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -209,7 +209,7 @@
     <a href="../.." title="Ben McLeod" class="md-nav__button md-logo" aria-label="Ben McLeod" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5v14H4V5zm0-2H4c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2m-2 12H6v2h12zm-8-8H6v6h4zm2 2h6V7h-6zm6 2h-6v2h6z"/></svg>
 
     </a>
     Ben McLeod
@@ -539,47 +539,13 @@
   <div class="md-post__content md-typeset">
     <h2 id="winget-ftw"><a class="toclink" href="../../2026/05/19/winget-ftw/">WinGet FTW!</a></h2>
 <p>Windows Package Manager, better known as <code>winget</code>, has become one of my favourite little tools for maintaining Windows machines. It turns software installation from a click-heavy chore into something repeatable, searchable, and scriptable. </p>
-<p>I used to use Chocolatey, and on macOS I’m a fan of Homebrew, but on Windows it’s great to have a native tool. Especially in the era of supply-chain attacks and package managers like npm being targeted, one can at least hope that Microsoft’s version will be a little more robust — though many packages do ultimately point to third-party vendors, so caution should still be exercised.</p>
-<h3 id="why-i-like-it"><a class="toclink" href="../../2026/05/19/winget-ftw/#why-i-like-it">Why I Like It</a></h3>
-<p>It's simple! Want to upgrade <em>almost all</em> of the software on your PC in one command, silently, in the background whilst you get on with other stuff? WinGet has got you.</p>
-<pre><code class="language-powershell">winget upgrade --all --include-unknown --accept-package-agreements --accept-source-agreements --silent
-</code></pre>
-<p>This command will accept all of those annoying agreements for you, it does away with installation wizards and handles those automatically in the background. I have this command set to run as a scheduled task weekly at a time I'm usually at my PC so that I never have to worry about my applications being out of date or vulnerabilities running rampant.</p>
-<h3 id="useful-commands"><a class="toclink" href="../../2026/05/19/winget-ftw/#useful-commands">Useful Commands</a></h3>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Search for an app</td>
-<td><code>winget search 7zip</code></td>
-</tr>
-<tr>
-<td>Install an app</td>
-<td><code>winget install 7zip</code></td>
-</tr>
-<tr>
-<td>List installed apps</td>
-<td><code>winget list</code></td>
-</tr>
-<tr>
-<td>Upgrade one app</td>
-<td><code>winget upgrade 7zip</code></td>
-</tr>
-<tr>
-<td>Upgrade everything</td>
-<td><code>winget upgrade --all</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="where-it-fits"><a class="toclink" href="../../2026/05/19/winget-ftw/#where-it-fits">Where It Fits</a></h3>
-<p><code>winget</code> isn't a full configuration management system, but it doesn't need to be. For PCs, test environments, and quick rebuilds, it removes a lot of friction.</p>
-<h3 id="where-it-doesnt"><a class="toclink" href="../../2026/05/19/winget-ftw/#where-it-doesnt">Where It Doesn't</a></h3>
-<p>Sadly it's not supported in Windows Server 2016-2022, if it were it'd make my life remediating vulnerabilities a lot simpler. It is supported in Server 2025 though, so I have that to look forward to.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/05/19/winget-ftw/">
+          Continue reading
+        </a>
+      </nav>
     
     
   </div>

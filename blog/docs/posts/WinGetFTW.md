@@ -11,6 +11,8 @@ authors:
 
 Windows Package Manager, better known as `winget`, has become one of my favourite little tools for maintaining Windows machines. It turns software installation from a click-heavy chore into something repeatable, searchable, and scriptable. 
 
+<!-- more -->
+
 I used to use Chocolatey, and on macOS I’m a fan of Homebrew, but on Windows it’s great to have a native tool. Especially in the era of supply-chain attacks and package managers like npm being targeted, one can at least hope that Microsoft’s version will be a little more robust — though many packages do ultimately point to third-party vendors, so caution should still be exercised.
 
 ## Why I Like It

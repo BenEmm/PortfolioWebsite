@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ben McLeod blog">
+  <rect width="64" height="64" rx="12" fill="#101715"/>
+  <path d="M14 14h36v36H14V14zm4 4v28h28V18H18zm4 7h12v14H22V25zm16 0h8v4h-8v-4zm0 8h8v4h-8v-4z" fill="#f6c945"/>
+  <path d="M22 43h24v4H22v-4z" fill="#51d6b5"/>
+</svg>
