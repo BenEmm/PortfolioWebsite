@@ -210,8 +210,12 @@ function setupProfilePanel() {
     }
 
     profilePanel.classList.remove('profile-panel--closing');
+    profilePanel.classList.remove('profile-panel--active');
     profilePanel.hidden = false;
     body.classList.add('modal-open');
+    window.requestAnimationFrame(() => {
+      profilePanel.classList.add('profile-panel--active');
+    });
     profileCloseButtons[0].focus();
   };
 
@@ -220,6 +224,7 @@ function setupProfilePanel() {
       return;
     }
 
+    profilePanel.classList.remove('profile-panel--active');
     profilePanel.classList.add('profile-panel--closing');
 
     closeTimer = window.setTimeout(() => {
@@ -252,6 +257,133 @@ function setupProfilePanel() {
   });
 }
 
+function setupSocialWaveGroup(containerSelector) {
+  const buttons = Array.from(document.querySelectorAll(`${containerSelector} a`));
+  let hoverTimer = null;
+  let isWaving = false;
+
+  if (!buttons.length) {
+    return;
+  }
+
+  const cancelTimer = () => {
+    if (hoverTimer) {
+      window.clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+  };
+
+  const triggerWave = () => {
+    if (isWaving) {
+      return;
+    }
+
+    isWaving = true;
+    const passDelay = buttons.length * 120 + 520;
+    const passes = [buttons, [...buttons].reverse(), buttons];
+
+    passes.forEach((pass, passIndex) => {
+      pass.forEach((button, index) => {
+        const delay = passIndex * passDelay + index * 120;
+
+        window.setTimeout(() => {
+          button.classList.add('footer-wave');
+          window.setTimeout(() => button.classList.remove('footer-wave'), 620);
+        }, delay);
+      });
+    });
+
+    window.setTimeout(() => {
+      isWaving = false;
+    }, passDelay * passes.length + 120);
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener('mouseenter', () => {
+      cancelTimer();
+      hoverTimer = window.setTimeout(triggerWave, 10000);
+    });
+
+    button.addEventListener('mouseleave', () => {
+      cancelTimer();
+    });
+  });
+}
+
+function setupFooterWave() {
+  setupSocialWaveGroup('.footer-socials');
+}
+
+function setupHeroSocialAttack() {
+  const heroSocials = document.querySelector('.socials');
+  if (!heroSocials) {
+    return;
+  }
+
+  const buttons = Array.from(heroSocials.querySelectorAll('a'));
+  const emailButton = buttons.find((button) => button.href.includes('mailto:'));
+  const githubButton = buttons.find((button) => button.href.includes('github.com'));
+  const linkedinButton = buttons.find((button) => button.href.includes('linkedin.com'));
+  let hoverTimer = null;
+  let isAttacking = false;
+  let attackCompleted = false;
+
+  if (!emailButton || !githubButton || !linkedinButton) {
+    return;
+  }
+
+  const cancelTimer = () => {
+    if (hoverTimer) {
+      window.clearTimeout(hoverTimer);
+      hoverTimer = null;
+    }
+  };
+
+  const triggerHighFive = () => {
+    emailButton.classList.add('hero-highfive', 'hero-highfive-left');
+    githubButton.classList.add('hero-highfive', 'hero-highfive-right');
+
+    window.setTimeout(() => {
+      emailButton.classList.remove('hero-highfive', 'hero-highfive-left');
+      githubButton.classList.remove('hero-highfive', 'hero-highfive-right');
+    }, 860);
+  };
+
+  const resetAttack = () => {
+    emailButton.classList.remove('hero-attacker', 'hero-attacker-left');
+    githubButton.classList.remove('hero-attacker', 'hero-attacker-right');
+    linkedinButton.classList.remove('hero-target', 'hero-explode');
+    isAttacking = false;
+    attackCompleted = true;
+    window.setTimeout(() => {
+      linkedinButton.remove();
+      triggerHighFive();
+    }, 180);
+  };
+
+  const triggerAttack = () => {
+    if (isAttacking || attackCompleted) {
+      return;
+    }
+
+    isAttacking = true;
+    emailButton.classList.add('hero-attacker', 'hero-attacker-left');
+    githubButton.classList.add('hero-attacker', 'hero-attacker-right');
+    linkedinButton.classList.add('hero-target', 'hero-explode');
+
+    window.setTimeout(resetAttack, 2200);
+  };
+
+  heroSocials.addEventListener('mouseenter', () => {
+    cancelTimer();
+    hoverTimer = window.setTimeout(triggerAttack, 10000);
+  });
+
+  heroSocials.addEventListener('mouseleave', () => {
+    cancelTimer();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   updateCopyright();
   setupBanner();
@@ -261,4 +393,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTyper();
   setupBackToTop();
   setupProfilePanel();
+  setupFooterWave();
+  setupHeroSocialAttack();
 });
