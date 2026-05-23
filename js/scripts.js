@@ -259,6 +259,10 @@ function setupProfilePanel() {
 
 function setupSocialWaveGroup(containerSelector) {
   const buttons = Array.from(document.querySelectorAll(`${containerSelector} a`));
+  const waveStepDelay = 108;
+  const waveAnimationDuration = 720;
+  const wavePassGap = 120;
+  const supportsRichWave = typeof Element !== 'undefined' && typeof Element.prototype.animate === 'function';
   let hoverTimer = null;
   let isWaving = false;
 
@@ -273,29 +277,60 @@ function setupSocialWaveGroup(containerSelector) {
     }
   };
 
+  const createWaveKeyframes = (direction) => [
+    { transform: 'translate3d(0, 0, 0) scale(1)', offset: 0 },
+    { transform: `translate3d(0, 0.16rem, 0) scale(0.95, 1.04) rotate(${-2 * direction}deg)`, offset: 0.12 },
+    { transform: `translate3d(0, -0.44rem, 0) scale(1.02, 0.98) rotate(${1.5 * direction}deg)`, offset: 0.28 },
+    { transform: `translate3d(0, -1.24rem, 0) scale(1.06, 0.94) rotate(${4.5 * direction}deg)`, offset: 0.5 },
+    { transform: `translate3d(0, -0.58rem, 0) scale(1.02, 0.98) rotate(${2 * direction}deg)`, offset: 0.68 },
+    { transform: `translate3d(0, 0.1rem, 0) scale(0.985, 1.015) rotate(${-1.1 * direction}deg)`, offset: 0.84 },
+    { transform: 'translate3d(0, 0, 0) scale(1)', offset: 1 }
+  ];
+
+  const queueWave = (button, delay, direction) => {
+    if (supportsRichWave) {
+      button.animate(createWaveKeyframes(direction), {
+        delay,
+        duration: waveAnimationDuration,
+        easing: 'linear',
+        fill: 'none'
+      });
+      return;
+    }
+
+    window.setTimeout(() => {
+      button.classList.add('footer-wave');
+      window.setTimeout(() => button.classList.remove('footer-wave'), waveAnimationDuration);
+    }, delay);
+  };
+
   const triggerWave = () => {
     if (isWaving) {
       return;
     }
 
     isWaving = true;
-    const passDelay = buttons.length * 120 + 520;
-    const passes = [buttons, [...buttons].reverse(), buttons];
+    const passDelay = (buttons.length - 1) * waveStepDelay + waveAnimationDuration + wavePassGap;
+    const passes = [
+      { items: buttons, direction: 1 },
+      { items: [...buttons].reverse(), direction: -1 },
+      { items: buttons, direction: 1 }
+    ];
 
     passes.forEach((pass, passIndex) => {
-      pass.forEach((button, index) => {
-        const delay = passIndex * passDelay + index * 120;
-
-        window.setTimeout(() => {
-          button.classList.add('footer-wave');
-          window.setTimeout(() => button.classList.remove('footer-wave'), 620);
-        }, delay);
+      pass.items.forEach((button, index) => {
+        const delay = passIndex * passDelay + index * waveStepDelay;
+        queueWave(button, delay, pass.direction);
       });
     });
 
+    const totalWaveDuration = passDelay * (passes.length - 1)
+      + (buttons.length - 1) * waveStepDelay
+      + waveAnimationDuration;
+
     window.setTimeout(() => {
       isWaving = false;
-    }, passDelay * passes.length + 120);
+    }, totalWaveDuration);
   };
 
   buttons.forEach((button) => {
@@ -324,6 +359,8 @@ function setupHeroSocialAttack() {
   const emailButton = buttons.find((button) => button.href.includes('mailto:'));
   const githubButton = buttons.find((button) => button.href.includes('github.com'));
   const linkedinButton = buttons.find((button) => button.href.includes('linkedin.com'));
+  const heroAttackDuration = 3900;
+  const heroCleanupDelay = 320;
   let hoverTimer = null;
   let isAttacking = false;
   let attackCompleted = false;
@@ -352,13 +389,12 @@ function setupHeroSocialAttack() {
   const resetAttack = () => {
     emailButton.classList.remove('hero-attacker', 'hero-attacker-left');
     githubButton.classList.remove('hero-attacker', 'hero-attacker-right');
-    linkedinButton.classList.remove('hero-target', 'hero-explode');
     isAttacking = false;
     attackCompleted = true;
     window.setTimeout(() => {
       linkedinButton.remove();
       triggerHighFive();
-    }, 180);
+    }, heroCleanupDelay);
   };
 
   const triggerAttack = () => {
@@ -371,7 +407,7 @@ function setupHeroSocialAttack() {
     githubButton.classList.add('hero-attacker', 'hero-attacker-right');
     linkedinButton.classList.add('hero-target', 'hero-explode');
 
-    window.setTimeout(resetAttack, 2200);
+    window.setTimeout(resetAttack, heroAttackDuration);
   };
 
   heroSocials.addEventListener('mouseenter', () => {
