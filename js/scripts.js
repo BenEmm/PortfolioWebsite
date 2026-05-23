@@ -194,8 +194,13 @@ function setupProfilePanel() {
 
   let previousFocus = null;
   let closeTimer = null;
+  const desktopProfileQuery = window.matchMedia('(min-width: 640px)');
 
   const openPanel = () => {
+    if (!desktopProfileQuery.matches) {
+      return;
+    }
+
     if (closeTimer) {
       window.clearTimeout(closeTimer);
       closeTimer = null;
@@ -241,7 +246,22 @@ function setupProfilePanel() {
     }, 580);
   };
 
+  const syncProfileAvailability = () => {
+    const isDesktop = desktopProfileQuery.matches;
+
+    profileOpenButton.disabled = !isDesktop;
+    profileOpenButton.setAttribute('aria-hidden', String(!isDesktop));
+    profileOpenButton.tabIndex = isDesktop ? 0 : -1;
+
+    if (!isDesktop && !profilePanel.hidden) {
+      closePanel();
+    }
+  };
+
   profileOpenButton.addEventListener('click', openPanel);
+  desktopProfileQuery.addEventListener('change', syncProfileAvailability);
+  syncProfileAvailability();
+
   profileCloseButtons.forEach((button) => {
     button.addEventListener('click', closePanel);
   });
