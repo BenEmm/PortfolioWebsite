@@ -9,6 +9,16 @@
 		content="Ben McLeod is an IT professional specialising in virtualisation, information security, documentation, automation, and practical IT support.">
 	<meta name="author" content="Ben McLeod">
 	<meta name="theme-color" content="#101715">
+	<script>
+		try {
+			const savedTheme = localStorage.getItem('theme');
+			const isDarkTheme = savedTheme !== 'light';
+			document.documentElement.classList.toggle('theme-dark', isDarkTheme);
+			document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isDarkTheme ? '#101715' : '#f6f3ea');
+		} catch (error) {
+			document.documentElement.classList.add('theme-dark');
+		}
+	</script>
 	<link rel="canonical" href="https://www.ben-mcleod.com/">
 	<link rel="manifest" href="/site.webmanifest">
 	<meta property="og:type" content="website">

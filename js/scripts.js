@@ -5,6 +5,7 @@ const menu = document.querySelector('#menu');
 const menuToggler = document.querySelector('#menuToggler');
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 const darkModeIcon = document.querySelector('#icon');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const typer = document.querySelector('#typer');
 const backToTop = document.querySelector('.back-to-top');
 const heroConsole = document.querySelector('.hero-console');
@@ -113,16 +114,17 @@ function setupActiveNavigation() {
 function applyTheme(theme) {
   const isDark = theme === 'dark';
 
+  document.documentElement.classList.toggle('theme-dark', isDark);
   body.classList.toggle('darkmode', isDark);
   darkModeIcon?.classList.toggle('fa-sun', isDark);
   darkModeIcon?.classList.toggle('fa-moon', !isDark);
+  themeColorMeta?.setAttribute('content', isDark ? '#101715' : '#f6f3ea');
 }
 
 function setupDarkMode() {
   const savedTheme = localStorage.getItem('theme');
-  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-  applyTheme(savedTheme || preferredTheme);
+  applyTheme(savedTheme || 'dark');
 
   darkModeToggle?.addEventListener('click', () => {
     const nextTheme = body.classList.contains('darkmode') ? 'light' : 'dark';

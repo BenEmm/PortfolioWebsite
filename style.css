@@ -39,7 +39,8 @@
 	--section-gap: 5rem;
 }
 
-body.darkmode {
+body.darkmode,
+:root.theme-dark {
 	--clr-bg: #121516;
 	--clr-bg-2: #1b201e;
 	--clr-text: #f5f1e8;
@@ -436,7 +437,8 @@ body.with-banner .dark-mode-toggle {
 	top: 4.35rem;
 }
 
-body.darkmode .dark-mode-toggle {
+body.darkmode .dark-mode-toggle,
+:root.theme-dark .dark-mode-toggle {
 	color: var(--clr-accent-3);
 	transform: rotate(180deg);
 }
@@ -2018,7 +2020,8 @@ footer {
 		width: auto;
 	}
 
-	body.darkmode nav {
+	body.darkmode nav,
+	:root.theme-dark nav {
 		background:
 			linear-gradient(180deg, rgba(31, 37, 35, 0.94), rgba(24, 32, 29, 0.88));
 	}
